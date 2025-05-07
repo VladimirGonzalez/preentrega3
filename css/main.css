@@ -4,12 +4,24 @@
   --color-oscuro: #212529;      /* texto principal */
   --color-claro: #f8f9fa;       /* fondo general */
 }
-
+/* con height al 100% me aseguro que el html ocuper el 100% de la pantalla */
+html{
+  height: 100%;
+}
+/* agrego esto para que main ocupe todo el espacio disponible (fix para el footer) */
+main{
+  flex: 1;
+}
 body {
   font-family: system-ui, sans-serif;
   background-color: var(--color-claro);
   color: var(--color-oscuro);
   line-height: 1.6;
+  /* agrego esto para crear una columna que ocupa toda la altura de la web (fix para el footer) */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /* links del navbar */
