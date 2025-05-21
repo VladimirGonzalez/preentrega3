@@ -1,99 +1,151 @@
-/* paleta y tipografías */
-:root {
-  --color-principal: #0d6efd;   /* azul elearning */
-  --color-oscuro: #212529;      /* texto principal */
-  --color-claro: #f8f9fa;       /* fondo general */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-/* con height al 100% me aseguro que el html ocuper el 100% de la pantalla */
-html{
+.btn-outline-primary, .btn-primary {
+  transition: opacity 0.3s ease;
+  border-radius: 0.5rem;
+}
+.btn-outline-primary:hover, .btn-primary:hover {
+  opacity: 0.85;
+}
+
+.m-1 {
+  margin: 0.25rem !important;
+}
+
+.m-2 {
+  margin: 0.5rem !important;
+}
+
+.m-3 {
+  margin: 0.75rem !important;
+}
+
+.m-4 {
+  margin: 1rem !important;
+}
+
+.m-5 {
+  margin: 1.25rem !important;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
   height: 100%;
 }
-/* agrego esto para que main ocupe todo el espacio disponible (fix para el footer) */
-main{
-  flex: 1;
-}
+
 body {
-  font-family: system-ui, sans-serif;
-  background-color: var(--color-claro);
-  color: var(--color-oscuro);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   line-height: 1.6;
-  /* agrego esto para crear una columna que ocupa toda la altura de la web (fix para el footer) */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   overflow-x: hidden;
+  background-color: #f8f9fa;
+  color: #212529;
 }
 
-/* links del navbar */
-.nav-link {
-  color: var(--color-oscuro);
+main {
+  flex: 1;
 }
 
-.nav-link.active,
-.nav-link:hover {
-  color: var(--color-principal);
+img {
+  max-width: 100%;
+  display: block;
 }
 
-/* imágenes en las cards */
-.card-img-top {
-  object-fit: cover;
-  height: 180px;
+.navbar .nav-link {
+  color: #212529;
+}
+.navbar .nav-link.active, .navbar .nav-link:hover {
+  color: #0d6efd;
 }
 
-
-/* sección banner con titulo */
 header.bg-primary {
-  background-image: linear-gradient(
-      rgba(13, 0, 255, 0.8),
-      rgba(0, 0, 0, 0.177)
-    ),
-    url("../img/banner.webp");
+  background-image: linear-gradient(rgba(13, 110, 253, 0.8), rgba(0, 0, 0, 0.18)), url("../img/banner.webp");
   background-size: cover;
   background-position: center;
+  animation: fadeInUp 0.8s both;
 }
-
-/* flex para el header (centra contenido vertical y horizontalmente) */
-.flex-hero {
+header.bg-primary .flex-hero {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   text-align: center;
 }
-
-
-/* fotos redondeadas del equipo */
-.rounded-circle {
-  object-fit: cover;
+header.bg-primary .flex-hero h1 {
+  font-weight: 700;
 }
-
-/* evita el scroll horizontal */
-body {
-  overflow-x: hidden;
-}
-
-/* media queries */
 @media (max-width: 768px) {
-  header h1 {
+  header.bg-primary h1 {
     font-size: 2rem;
   }
-
-  header p {
+  header.bg-primary p {
     font-size: 1rem;
   }
+}
 
+.grid-cursos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+@media (max-width: 768px) {
+  .grid-cursos {
+    grid-template-columns: 1fr;
+  }
+}
+
+.navbar-brand img {
+  height: 32px;
+}
+
+@media (max-width: 768px) {
   .navbar-brand img {
     height: 24px;
   }
+}
+.btn-primary {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  color: white;
+}
 
-  .card-img-top {
+.btn-outline-primary {
+  color: #0d6efd;
+  border: 1px solid #0d6efd;
+  background-color: transparent;
+}
+
+.card {
+  border: none;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+.card img.card-img-top {
+  object-fit: cover;
+  height: 180px;
+}
+@media (max-width: 768px) {
+  .card img.card-img-top {
     height: 140px;
   }
 }
-
-/* grid para cursos */
-.grid-cursos {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 1rem;
+.card:hover {
+  transform: translateY(-4px) scale(1.02);
 }

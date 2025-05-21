@@ -1,0 +1,19 @@
+// variables globales
+$font-family-base: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+$color-primary : #0d6efd;   // azul “Coder”
+$color-dark    : #212529;   // gris casi negro
+$color-light   : #f8f9fa;   // gris súper clarito
+
+$radius-base   : .5rem;     // redondeado estándar
+$shadow-soft   : 0 .25rem .5rem rgba(#000, .10);
+
+// breakpoints
+$bp-sm : 576px;
+$bp-md : 768px;
+$bp-lg : 992px;
+$bp-xl : 1200px;
+
+// para pruebas de condicionales (@if)
+// se se cambia a 'dark' se va a ver el cambio en body.
+$theme: light;

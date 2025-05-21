@@ -1,0 +1,6 @@
+// detallecito para el brand
+.navbar-brand img { height:32px; }
+
+@include respond(md) {
+  .navbar-brand img { height:24px; }
+}
